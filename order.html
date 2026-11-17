@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Up Game Online - JunStore by Rendra</title>
+  <meta name="description" content="Halaman pemesanan top up game online instan dan otomatis 24 jam di JunStore by Rendra.">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="css/rendra-style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="rendra-header" id="rendra-header">
+    <div class="rendra-container">
+      <nav class="rendra-navbar">
+        <a href="index.html" class="rendra-brand">
+          <img src="assets/images/junstore-logo.svg" alt="JunStore Logo" class="rendra-brand-img">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="rendra-nav-menu">
+          <li><a href="index.html" class="rendra-nav-link">Beranda</a></li>
+          <li><a href="order.html" class="rendra-nav-link rendra-active">Top Up Game</a></li>
+          <li><a href="check-order.html" class="rendra-nav-link">Lacak Pesanan</a></li>
+          <li><a href="pricelist.html" class="rendra-nav-link">Daftar Harga</a></li>
+          <li><a href="faq.html" class="rendra-nav-link">Bantuan (FAQ)</a></li>
+          <li><a href="about.html" class="rendra-nav-link">Tentang Kami</a></li>
+          <li><a href="contact.html" class="rendra-nav-link">Kontak</a></li>
+        </ul>
+
+        <div class="rendra-nav-actions">
+          <a href="check-order.html" class="rendra-btn rendra-btn-outline" style="font-size: 0.85rem; padding: 8px 16px;">
+            <span>🔍</span> Cek Invoice
+          </a>
+          <button class="rendra-hamburger" id="rendra-hamburger" aria-label="Toggle navigation">
+            <span>☰</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="rendra-mobile-menu" id="rendra-mobile-menu">
+      <ul>
+        <li><a href="index.html" class="rendra-nav-link">Beranda</a></li>
+        <li><a href="order.html" class="rendra-nav-link rendra-active">Top Up Game</a></li>
+        <li><a href="check-order.html" class="rendra-nav-link">Lacak Pesanan</a></li>
+        <li><a href="pricelist.html" class="rendra-nav-link">Daftar Harga</a></li>
+        <li><a href="faq.html" class="rendra-nav-link">Bantuan (FAQ)</a></li>
+        <li><a href="about.html" class="rendra-nav-link">Tentang Kami</a></li>
+        <li><a href="contact.html" class="rendra-nav-link">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="rendra-section">
+    <div class="rendra-container">
+      
+      <!-- ORDER TWO-COLUMN LAYOUT -->
+      <div class="rendra-order-layout">
+        
+        <!-- SIDEBAR: GAME SUMMARY -->
+        <aside class="rendra-order-sidebar">
+          <div class="rendra-order-sidebar-img">
+            <img id="rendra-order-game-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Game Thumbnail">
+          </div>
+          <h1 class="rendra-order-sidebar-title" id="rendra-order-game-title">Mobile Legends</h1>
+          <p class="rendra-order-sidebar-dev" id="rendra-order-game-pub">Moonton</p>
+          
+          <div class="rendra-order-steps-info">
+            <div class="rendra-order-step-hint">
+              <div class="rendra-order-step-num">1</div>
+              <span>Masukkan User ID & Zone ID akun Anda secara teliti.</span>
+            </div>
+            <div class="rendra-order-step-hint">
+              <div class="rendra-order-step-num">2</div>
+              <span>Pilih nominal item / diamond yang ingin Anda beli.</span>
+            </div>
+            <div class="rendra-order-step-hint">
+              <div class="rendra-order-step-num">3</div>
+              <span>Pilih metode pembayaran (QRIS, E-Wallet, VA, Minimarket).</span>
+            </div>
+            <div class="rendra-order-step-hint">
+              <div class="rendra-order-step-num">4</div>
+              <span>Masukkan nomor WhatsApp aktif untuk menerima invoice transaksi.</span>
+            </div>
+            <div class="rendra-order-step-hint">
+              <div class="rendra-order-step-num">5</div>
+              <span>Klik <strong>Beli Sekarang</strong> untuk menyelesaikan transaksi kilat.</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN STEPS FORM -->
+        <section class="rendra-order-form-container">
+          
+          <!-- STEP 1: ACCOUNT DATA -->
+          <div class="rendra-order-card">
+            <div class="rendra-order-card-header">
+              <div class="rendra-order-card-num">1</div>
+              <h2 class="rendra-order-card-title">Masukkan Data Akun</h2>
+            </div>
+            <div class="rendra-form-row">
+              <div class="rendra-form-group">
+                <label class="rendra-label" for="rendra-input-userid">User ID / Player ID</label>
+                <input type="text" id="rendra-input-userid" class="rendra-input" placeholder="Masukkan User ID..." required>
+                <p class="rendra-hint">Dapat dilihat di profil in-game akun Anda.</p>
+              </div>
+              <div class="rendra-form-group" id="rendra-zone-group">
+                <label class="rendra-label" for="rendra-input-zoneid">Zone ID / Server</label>
+                <input type="text" id="rendra-input-zoneid" class="rendra-input" placeholder="Contoh: 1234">
+                <p class="rendra-hint">4 atau 5 angka di dalam kurung di samping User ID.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: SELECT NOMINAL -->
+          <div class="rendra-order-card">
+            <div class="rendra-order-card-header">
+              <div class="rendra-order-card-num">2</div>
+              <h2 class="rendra-order-card-title">Pilih Nominal Top Up</h2>
+            </div>
+            <div class="rendra-nominal-grid" id="rendra-nominal-list">
+              <!-- Dynamically populated by JS according to selected game -->
+            </div>
+          </div>
+
+          <!-- STEP 3: PAYMENT METHOD -->
+          <div class="rendra-order-card">
+            <div class="rendra-order-card-header">
+              <div class="rendra-order-card-num">3</div>
+              <h2 class="rendra-order-card-title">Pilih Metode Pembayaran</h2>
+            </div>
+            <div class="rendra-payment-grid">
+              
+              <!-- QRIS -->
+              <div class="rendra-payment-item" data-payment="QRIS All Payment">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/qris.svg" alt="QRIS">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">QRIS Instant</div>
+                    <div class="rendra-payment-price">Otomatis 24 Jam</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DANA -->
+              <div class="rendra-payment-item" data-payment="DANA Instant">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/dana.svg" alt="DANA">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">DANA E-Wallet</div>
+                    <div class="rendra-payment-price">Bebas Biaya Admin</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GOPAY -->
+              <div class="rendra-payment-item" data-payment="GoPay">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/gopay.svg" alt="GoPay">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">GoPay</div>
+                    <div class="rendra-payment-price">Instant settlement</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SHOPEEPAY -->
+              <div class="rendra-payment-item" data-payment="ShopeePay">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/shopeepay.svg" alt="ShopeePay">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">ShopeePay</div>
+                    <div class="rendra-payment-price">Cashback koin</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OVO -->
+              <div class="rendra-payment-item" data-payment="OVO">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/ovo.svg" alt="OVO">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">OVO Cash</div>
+                    <div class="rendra-payment-price">Proses Cepat</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BCA VA -->
+              <div class="rendra-payment-item" data-payment="BCA Virtual Account">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/bca.svg" alt="BCA">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">BCA Virtual Account</div>
+                    <div class="rendra-payment-price">Verifikasi Otomatis</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MANDIRI VA -->
+              <div class="rendra-payment-item" data-payment="Mandiri Virtual Account">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/mandiri.svg" alt="Mandiri">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">Mandiri VA</div>
+                    <div class="rendra-payment-price">Verifikasi Otomatis</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ALFAMART -->
+              <div class="rendra-payment-item" data-payment="Gerai Alfamart">
+                <div class="rendra-payment-left">
+                  <div class="rendra-payment-logo">
+                    <img src="assets/images/payments/alfamart.svg" alt="Alfamart">
+                  </div>
+                  <div>
+                    <div class="rendra-payment-name">Alfamart / Indomaret</div>
+                    <div class="rendra-payment-price">Bayar Tunai di Kasir</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- STEP 4: WHATSAPP INPUT -->
+          <div class="rendra-order-card">
+            <div class="rendra-order-card-header">
+              <div class="rendra-order-card-num">4</div>
+              <h2 class="rendra-order-card-title">Nomor WhatsApp</h2>
+            </div>
+            <div class="rendra-form-group">
+              <label class="rendra-label" for="rendra-input-wa">No. WhatsApp Aktif</label>
+              <input type="tel" id="rendra-input-wa" class="rendra-input" placeholder="Contoh: 081234567890" required>
+              <p class="rendra-hint">Bukti pembayaran dan nomor invoice pesanan akan dikirimkan ke nomor ini.</p>
+            </div>
+          </div>
+
+          <!-- STEP 5: TOTAL & BUY BUTTON -->
+          <div class="rendra-order-total-bar">
+            <div>
+              <div class="rendra-total-label">Total Pembayaran:</div>
+              <div class="rendra-total-amount" id="rendra-order-total-display">Rp 0</div>
+            </div>
+            <button type="button" class="rendra-btn rendra-btn-accent" id="rendra-btn-submit-order" style="font-size: 1.05rem; padding: 14px 32px;">
+              ⚡ Beli Sekarang
+            </button>
+          </div>
+
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== MODAL KONFIRMASI PEMBELIAN ==================== -->
+  <div class="rendra-modal-overlay" id="rendra-order-modal">
+    <div class="rendra-modal-box">
+      <div class="rendra-modal-header">
+        <h3 class="rendra-modal-title">Konfirmasi Detail Pesanan</h3>
+        <button class="rendra-modal-close" id="rendra-modal-close">&times;</button>
+      </div>
+      <div class="rendra-modal-body">
+        <div class="rendra-modal-row">
+          <span>Game:</span>
+          <span id="rendra-modal-game">-</span>
+        </div>
+        <div class="rendra-modal-row">
+          <span>Data Akun:</span>
+          <span id="rendra-modal-account">-</span>
+        </div>
+        <div class="rendra-modal-row">
+          <span>Item / Nominal:</span>
+          <span id="rendra-modal-item">-</span>
+        </div>
+        <div class="rendra-modal-row">
+          <span>Metode Pembayaran:</span>
+          <span id="rendra-modal-payment">-</span>
+        </div>
+        <div class="rendra-modal-row">
+          <span>Nomor WhatsApp:</span>
+          <span id="rendra-modal-wa">-</span>
+        </div>
+        <div class="rendra-modal-row" style="border-bottom: none; padding-top: 16px;">
+          <span style="font-size: 1.05rem; color: #fff;">Total Tagihan:</span>
+          <span style="font-size: 1.25rem; color: var(--rendra-accent);" id="rendra-modal-price">Rp 0</span>
+        </div>
+      </div>
+      <div class="rendra-modal-footer">
+        <button type="button" class="rendra-btn rendra-btn-outline" id="rendra-modal-cancel" style="flex: 1;">Batal</button>
+        <button type="button" class="rendra-btn rendra-btn-primary" id="rendra-modal-confirm" style="flex: 2;">Konfirmasi & Bayar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="rendra-footer" id="rendra-footer">
+    <div class="rendra-container">
+      <div class="rendra-footer-grid">
+        <div class="rendra-footer-col">
+          <div class="rendra-brand" style="margin-bottom: 14px;">
+            <img src="assets/images/junstore-logo.svg" alt="JunStore Logo" class="rendra-brand-img">
+          </div>
+          <p style="color: var(--rendra-text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px;">
+            JunStore adalah platform resmi top-up game online dan voucher digital tercepat, termurah, dan terpercaya di Indonesia dengan transaksi otomatis 24 jam.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--rendra-accent);">
+            Owner & Developer: <strong>Rendra</strong>
+          </div>
+        </div>
+
+        <div class="rendra-footer-col">
+          <h4>Menu Cepat</h4>
+          <ul class="rendra-footer-links">
+            <li><a href="index.html" class="rendra-footer-link">Beranda</a></li>
+            <li><a href="order.html" class="rendra-footer-link">Top Up Game</a></li>
+            <li><a href="check-order.html" class="rendra-footer-link">Lacak Pesanan</a></li>
+            <li><a href="pricelist.html" class="rendra-footer-link">Daftar Harga</a></li>
+            <li><a href="faq.html" class="rendra-footer-link">Bantuan & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="rendra-footer-col">
+          <h4>Informasi</h4>
+          <ul class="rendra-footer-links">
+            <li><a href="about.html" class="rendra-footer-link">Tentang Kami</a></li>
+            <li><a href="contact.html" class="rendra-footer-link">Hubungi Kami</a></li>
+            <li><a href="faq.html" class="rendra-footer-link">Syarat & Ketentuan</a></li>
+            <li><a href="faq.html" class="rendra-footer-link">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+        <div class="rendra-footer-col">
+          <h4>Metode Pembayaran</h4>
+          <p style="color: var(--rendra-text-muted); font-size: 0.85rem; margin-bottom: 14px;">
+            QRIS, DANA, GoPay, OVO, ShopeePay, Bank BCA, Mandiri, BRI, BNI, serta Gerai Alfamart & Indomaret.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="rendra-badge rendra-badge-primary">QRIS</span>
+            <span class="rendra-badge rendra-badge-primary">DANA</span>
+            <span class="rendra-badge rendra-badge-primary">GOPAY</span>
+            <span class="rendra-badge rendra-badge-primary">OVO</span>
+            <span class="rendra-badge rendra-badge-primary">BCA</span>
+            <span class="rendra-badge rendra-badge-primary">ALFAMART</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rendra-footer-bottom">
+        <div>
+          © 2026 <strong>JunStore</strong>. All Rights Reserved. Crafted with passion by <strong>Rendra</strong>.
+        </div>
+        <div>
+          Proyek Ujian Pemrograman Web (HTML, CSS, JS)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/rendra-main.js"></script>
+</body>
+</html>

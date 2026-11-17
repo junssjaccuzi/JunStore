@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40">
+  <rect width="100" height="40" fill="#ffffff" rx="4"/>
+  <!-- OVO purple text -->
+  <text x="26" y="27" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#4c3494" letter-spacing="2">OVO</text>
+</svg>

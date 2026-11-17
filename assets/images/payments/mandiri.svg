@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40">
+  <rect width="100" height="40" fill="#ffffff" rx="4"/>
+  <!-- Mandiri typography & yellow waves -->
+  <text x="12" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#003d79" letter-spacing="-0.5">mandiri</text>
+  <path d="M 72 13 C 82 13 88 18 90 26 C 84 21 78 20 72 20 Z" fill="#fdb813"/>
+</svg>

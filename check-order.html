@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lacak Status Pesanan - JunStore by Rendra</title>
+  <meta name="description" content="Cek status transaksi dan lacak pembayaran top-up game Anda di JunStore by Rendra secara real-time.">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="css/rendra-style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="rendra-header" id="rendra-header">
+    <div class="rendra-container">
+      <nav class="rendra-navbar">
+        <a href="index.html" class="rendra-brand">
+          <img src="assets/images/junstore-logo.svg" alt="JunStore Logo" class="rendra-brand-img">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="rendra-nav-menu">
+          <li><a href="index.html" class="rendra-nav-link">Beranda</a></li>
+          <li><a href="order.html" class="rendra-nav-link">Top Up Game</a></li>
+          <li><a href="check-order.html" class="rendra-nav-link rendra-active">Lacak Pesanan</a></li>
+          <li><a href="pricelist.html" class="rendra-nav-link">Daftar Harga</a></li>
+          <li><a href="faq.html" class="rendra-nav-link">Bantuan (FAQ)</a></li>
+          <li><a href="about.html" class="rendra-nav-link">Tentang Kami</a></li>
+          <li><a href="contact.html" class="rendra-nav-link">Kontak</a></li>
+        </ul>
+
+        <div class="rendra-nav-actions">
+          <a href="order.html" class="rendra-btn rendra-btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">
+            <span>⚡</span> Top Up Lagi
+          </a>
+          <button class="rendra-hamburger" id="rendra-hamburger" aria-label="Toggle navigation">
+            <span>☰</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="rendra-mobile-menu" id="rendra-mobile-menu">
+      <ul>
+        <li><a href="index.html" class="rendra-nav-link">Beranda</a></li>
+        <li><a href="order.html" class="rendra-nav-link">Top Up Game</a></li>
+        <li><a href="check-order.html" class="rendra-nav-link rendra-active">Lacak Pesanan</a></li>
+        <li><a href="pricelist.html" class="rendra-nav-link">Daftar Harga</a></li>
+        <li><a href="faq.html" class="rendra-nav-link">Bantuan (FAQ)</a></li>
+        <li><a href="about.html" class="rendra-nav-link">Tentang Kami</a></li>
+        <li><a href="contact.html" class="rendra-nav-link">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="rendra-section">
+    <div class="rendra-container">
+      
+      <div class="rendra-track-card">
+        <div class="rendra-section-header" style="text-align: center; margin-bottom: 24px;">
+          <h1 class="rendra-section-title" style="justify-content: center;">Lacak Status Transaksi</h1>
+          <p class="rendra-section-subtitle">Masukkan Nomor Invoice pesanan atau Nomor WhatsApp Anda untuk melihat rincian pembayaran</p>
+        </div>
+
+        <!-- FORM PENCARIAN INVOICE -->
+        <form id="rendra-track-form">
+          <div class="rendra-form-group">
+            <label class="rendra-label" for="rendra-track-input">Nomor Invoice / No. WhatsApp</label>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <input type="text" id="rendra-track-input" class="rendra-input" placeholder="Contoh: JUN-202611-1001" style="flex: 1;" required>
+              <button type="submit" class="rendra-btn rendra-btn-primary" style="padding: 12px 28px;">
+                <span>🔍</span> Cek Status
+              </button>
+            </div>
+            <p class="rendra-hint" style="margin-top: 10px;">
+              Contoh cepat pengujian sistem: 
+              <a href="check-order.html?invoice=JUN-202611-1001" style="color: var(--rendra-secondary); text-decoration: underline;">JUN-202611-1001</a> atau 
+              <a href="check-order.html?invoice=JUN-202611-1002" style="color: var(--rendra-secondary); text-decoration: underline;">JUN-202611-1002</a>
+            </p>
+          </div>
+        </form>
+
+        <!-- KARTU HASIL PELACAKAN (DITAMPILKAN VIA JS) -->
+        <div class="rendra-invoice-result" id="rendra-track-result">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <span style="font-size: 0.85rem; color: var(--rendra-text-muted);">Nomor Invoice:</span>
+              <h2 style="font-size: 1.35rem; color: #fff;" id="rendra-res-invoice">JUN-202611-1001</h2>
+            </div>
+            <div>
+              <span class="rendra-badge rendra-badge-success" id="rendra-res-status" style="font-size: 0.95rem; padding: 6px 16px;">Berhasil</span>
+            </div>
+          </div>
+
+          <div style="background: #0d121c; border: 1px solid var(--rendra-border); border-radius: var(--rendra-radius-md); padding: 20px;">
+            <div class="rendra-modal-row">
+              <span>Game:</span>
+              <span id="rendra-res-game">-</span>
+            </div>
+            <div class="rendra-modal-row">
+              <span>Data Akun:</span>
+              <span id="rendra-res-account">-</span>
+            </div>
+            <div class="rendra-modal-row">
+              <span>Item Dibeli:</span>
+              <span id="rendra-res-item">-</span>
+            </div>
+            <div class="rendra-modal-row">
+              <span>Metode Pembayaran:</span>
+              <span id="rendra-res-payment">-</span>
+            </div>
+            <div class="rendra-modal-row">
+              <span>Waktu Transaksi:</span>
+              <span id="rendra-res-date">-</span>
+            </div>
+            <div class="rendra-modal-row" style="border-bottom: none; padding-top: 16px;">
+              <span style="font-size: 1.05rem; color: #fff;">Total Pembayaran:</span>
+              <span style="font-size: 1.3rem; color: var(--rendra-accent);" id="rendra-res-price">Rp 0</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; text-align: center; padding: 16px; background: rgba(121, 40, 202, 0.1); border-radius: var(--rendra-radius-md);">
+            <p style="font-size: 0.88rem; color: var(--rendra-text-muted);">
+              Jika item game belum masuk ke akun dalam waktu 10 menit, silakan hubungi tim kami di 
+              <a href="contact.html" style="color: var(--rendra-secondary); font-weight: 700; text-decoration: underline;">Halaman Kontak Kami</a>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="rendra-footer" id="rendra-footer">
+    <div class="rendra-container">
+      <div class="rendra-footer-grid">
+        <div class="rendra-footer-col">
+          <div class="rendra-brand" style="margin-bottom: 14px;">
+            <img src="assets/images/junstore-logo.svg" alt="JunStore Logo" class="rendra-brand-img">
+          </div>
+          <p style="color: var(--rendra-text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px;">
+            JunStore adalah platform resmi top-up game online dan voucher digital tercepat, termurah, dan terpercaya di Indonesia dengan transaksi otomatis 24 jam.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--rendra-accent);">
+            Owner & Developer: <strong>Rendra</strong>
+          </div>
+        </div>
+
+        <div class="rendra-footer-col">
+          <h4>Menu Cepat</h4>
+          <ul class="rendra-footer-links">
+            <li><a href="index.html" class="rendra-footer-link">Beranda</a></li>
+            <li><a href="order.html" class="rendra-footer-link">Top Up Game</a></li>
+            <li><a href="check-order.html" class="rendra-footer-link">Lacak Pesanan</a></li>
+            <li><a href="pricelist.html" class="rendra-footer-link">Daftar Harga</a></li>
+            <li><a href="faq.html" class="rendra-footer-link">Bantuan & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="rendra-footer-col">
+          <h4>Informasi</h4>
+          <ul class="rendra-footer-links">
+            <li><a href="about.html" class="rendra-footer-link">Tentang Kami</a></li>
+            <li><a href="contact.html" class="rendra-footer-link">Hubungi Kami</a></li>
+            <li><a href="faq.html" class="rendra-footer-link">Syarat & Ketentuan</a></li>
+            <li><a href="faq.html" class="rendra-footer-link">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+        <div class="rendra-footer-col">
+          <h4>Metode Pembayaran</h4>
+          <p style="color: var(--rendra-text-muted); font-size: 0.85rem; margin-bottom: 14px;">
+            QRIS, DANA, GoPay, OVO, ShopeePay, Bank BCA, Mandiri, BRI, BNI, serta Gerai Alfamart & Indomaret.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="rendra-badge rendra-badge-primary">QRIS</span>
+            <span class="rendra-badge rendra-badge-primary">DANA</span>
+            <span class="rendra-badge rendra-badge-primary">GOPAY</span>
+            <span class="rendra-badge rendra-badge-primary">OVO</span>
+            <span class="rendra-badge rendra-badge-primary">BCA</span>
+            <span class="rendra-badge rendra-badge-primary">ALFAMART</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rendra-footer-bottom">
+        <div>
+          © 2026 <strong>JunStore</strong>. All Rights Reserved. Crafted with passion by <strong>Rendra</strong>.
+        </div>
+        <div>
+          Proyek Ujian Pemrograman Web (HTML, CSS, JS)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/rendra-main.js"></script>
+</body>
+</html>

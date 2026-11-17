@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40">
+  <rect width="100" height="40" fill="#ffffff" rx="4"/>
+  <!-- GoPay ring/dot icon -->
+  <circle cx="16" cy="20" r="7" fill="#00aa13"/>
+  <circle cx="16" cy="20" r="3" fill="#ffffff"/>
+  <!-- go pay text -->
+  <text x="29" y="27" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" fill="#00aa13">go<tspan fill="#0081a7">pay</tspan></text>
+</svg>
